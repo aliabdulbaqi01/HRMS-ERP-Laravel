@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('email', 100)->unique();
             $table->string('username', 100);
             $table->string('password');
-            $table->integer('added_by');
-            $table->integer('updated_by');
-            $table->tinyInteger('active');
-            $table->date('date');
+            $table->integer('added_by')->nullable();
+            $table->integer('updated_by')->nullable();
+            $table->boolean('status')->default(1);
+            $table->date('date')->nullable();
             $table->timestamps();
             $table->integer('comp_code');
         });
